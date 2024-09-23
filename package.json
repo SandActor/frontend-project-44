@@ -10,6 +10,10 @@
     "type": "git",
     "url": "frontend-project-44"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "",
+  "type": "module",
   "license": "ISC"
 }
