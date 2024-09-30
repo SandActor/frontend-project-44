@@ -7,9 +7,11 @@ const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 console.log('What is the result of the expression?');
 let counterToCorrect = 0;
+const maxNumber = 30;
+
 while (counterToCorrect < 3) {
-  const firstNumber = Math.floor(Math.random() * 30);
-  const secondNumber = Math.floor(Math.random() * 30);
+  const firstNumber = Math.floor(Math.random() * maxNumber);
+  const secondNumber = Math.floor(Math.random() * maxNumber);
 
   const operationArray = [
     { opaeration: '+', answer: firstNumber + secondNumber },

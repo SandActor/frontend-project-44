@@ -7,8 +7,10 @@ const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let counterToCorrect = 0;
+const maxNumber = 30;
+
 while (counterToCorrect < 3) {
-  const number = Math.floor(Math.random() * 30);
+  const number = Math.floor(Math.random() * maxNumber);
   console.log(`Question: ${number}`);
   let correctAnswer = 'yes';
   const answer = readlineSync.question('Your answer: ');

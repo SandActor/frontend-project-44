@@ -14,9 +14,12 @@ const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 console.log('Find the greatest common divisor of given numbers.');
 let counterToCorrect = 0;
+const minNumber = 20;
+const maxNumber = 100;
+
 while (counterToCorrect < 3) {
-  const firstNumber = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
-  const secondNumber = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
+  const firstNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+  const secondNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 
   console.log(`Question: ${firstNumber} ${secondNumber}`);
   const answer = readlineSync.question('Your answer: ');
