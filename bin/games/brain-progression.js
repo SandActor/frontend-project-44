@@ -27,7 +27,7 @@ function generateArithmeticProgression() {
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
-console.log('Find the greatest common divisor of given numbers.');
+console.log('What number is missing in the progression?');
 
 let counterToCorrect = 0;
 let correctFlag = true;
