@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import { CheckCorrectAnsver } from '../src/index';
 
 function generateArithmeticProgression() {
   const length = Math.floor(Math.random() * 6) + 5;
@@ -27,20 +28,18 @@ console.log(`Hello, ${name}!`);
 console.log('Find the greatest common divisor of given numbers.');
 
 let counterToCorrect = 0;
-while (counterToCorrect < 3) {
+let correctFlag = true;
+
+while (counterToCorrect < 3 && correctFlag) {
   const gameData = generateArithmeticProgression();
   console.log(`Question: ${gameData.progression}`);
 
   const answer = readlineSync.question('Your answer: ');
   const correctAnsver = gameData.hiddenNumber;
 
-  if (parseInt(answer, 10) === correctAnsver) {
-    console.log('Correct!');
+  correctFlag = CheckCorrectAnsver(answer, correctAnsver, name);
+  if (correctFlag) {
     counterToCorrect += 1;
-  } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnsver}.`);
-    console.log(`Let's try again, ${name}!`);
-    break;
   }
 }
 if (counterToCorrect === 3) {

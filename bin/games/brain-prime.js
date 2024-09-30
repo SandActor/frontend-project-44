@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import { CheckCorrectAnsver } from '../src/index';
 
 function isPrime(num) {
   if (num <= 1) {
@@ -26,8 +27,9 @@ console.log(`Hello, ${name}!`);
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 let counterToCorrect = 0;
 const maxNumber = 10;
+let correctFlag = true;
 
-while (counterToCorrect < 3) {
+while (counterToCorrect < 3 && correctFlag) {
   const number = Math.floor(Math.random() * maxNumber);
   console.log(`Question: ${number}`);
   let correctAnswer = 'no';
@@ -36,13 +38,9 @@ while (counterToCorrect < 3) {
   if (isPrime(number)) {
     correctAnswer = 'yes';
   }
-  if (answer === correctAnswer) {
-    console.log('Correct!');
+  correctFlag = CheckCorrectAnsver(answer, correctAnswer, name);
+  if (correctFlag) {
     counterToCorrect += 1;
-  } else {
-    console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
-    console.log(`Let's try again, ${name}!`);
-    break;
   }
 }
 if (counterToCorrect === 3) {

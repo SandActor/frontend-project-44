@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import { CheckCorrectAnsver } from '../src/index';
 
 function gcd(number1, number2) {
   if (number2 === 0) {
@@ -14,23 +15,21 @@ const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 console.log('Find the greatest common divisor of given numbers.');
 let counterToCorrect = 0;
+let correctFlag = true;
 const minNumber = 20;
 const maxNumber = 100;
 
-while (counterToCorrect < 3) {
+while (counterToCorrect < 3 && correctFlag) {
   const firstNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
   const secondNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 
   console.log(`Question: ${firstNumber} ${secondNumber}`);
   const answer = readlineSync.question('Your answer: ');
   const correctAnsver = gcd(firstNumber, secondNumber);
-  if (parseInt(answer, 10) === correctAnsver) {
-    console.log('Correct!');
+
+  correctFlag = CheckCorrectAnsver(answer, correctAnsver, name);
+  if (correctFlag) {
     counterToCorrect += 1;
-  } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnsver}.`);
-    console.log(`Let's try again, ${name}!`);
-    break;
   }
 }
 if (counterToCorrect === 3) {
