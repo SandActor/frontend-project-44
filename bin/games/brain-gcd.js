@@ -28,7 +28,7 @@ while (counterToCorrect < 3 && correctFlag) {
   const answer = readlineSync.question('Your answer: ');
   const correctAnsver = gcd(firstNumber, secondNumber);
 
-  correctFlag = CheckCorrectAnsver(answer, correctAnsver, name);
+  correctFlag = CheckCorrectAnsver(parseInt(answer, 10), correctAnsver, name);
   if (correctFlag) {
     counterToCorrect += 1;
   }

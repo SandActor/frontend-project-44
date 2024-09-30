@@ -27,7 +27,7 @@ while (counterToCorrect < 3 && correctFlag) {
   console.log(`Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`);
   const answer = readlineSync.question('Your answer: ');
 
-  correctFlag = CheckCorrectAnsver(answer, opaeration.answer, name);
+  correctFlag = CheckCorrectAnsver(parseInt(answer, 10), opaeration.answer, name);
   if (correctFlag) {
     counterToCorrect += 1;
   }
