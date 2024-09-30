@@ -1,4 +1,5 @@
-function CheckCorrectAnsver(answer, correctAnsver, name) {
+// eslint-disable-next-line import/prefer-default-export
+export function CheckCorrectAnsver(answer, correctAnsver, name) {
   if (parseInt(answer, 10) === correctAnsver) {
     console.log('Correct!');
     return true;

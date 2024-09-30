@@ -18,6 +18,9 @@
     "brain-progression": "bin/games/brain-progression.js",
     "brain-prime": "bin/games/brain-prime.js"
   },
+  "src": {
+    "index": "src/index.js"
+  },
   "author": "",
   "type": "module",
   "license": "ISC",

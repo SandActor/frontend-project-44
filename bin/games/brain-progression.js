@@ -1,7 +1,9 @@
 #!/usr/bin/env node
+/* eslint-disable import/extensions */
 
 import readlineSync from 'readline-sync';
-import { CheckCorrectAnsver } from '../../src/index';
+// eslint-disable-next-line import/extensions, import/no-duplicates
+import { CheckCorrectAnsver } from '../index.js';
 
 function generateArithmeticProgression() {
   const length = Math.floor(Math.random() * 6) + 5;
