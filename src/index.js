@@ -7,5 +7,3 @@ function CheckCorrectAnsver(answer, correctAnsver, name) {
   console.log(`Let's try again, ${name}!`);
   return false;
 }
-
-export default CheckCorrectAnsver;
