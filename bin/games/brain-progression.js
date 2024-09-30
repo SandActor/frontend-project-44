@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { CheckCorrectAnsver } from '../src/index';
+import { CheckCorrectAnsver } from '../../src/index';
 
 function generateArithmeticProgression() {
   const length = Math.floor(Math.random() * 6) + 5;

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { CheckCorrectAnsver } from '../src/index';
+import { CheckCorrectAnsver } from '../../src/index';
 
 function gcd(number1, number2) {
   if (number2 === 0) {
