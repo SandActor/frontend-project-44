@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/extensions, import/no-duplicates
-import { CheckCorrectAnsver } from '../index.js';
+import { CheckCorrectAnsver } from '../../src/index.js';
 
 function isPrime(num) {
   if (num <= 1) {

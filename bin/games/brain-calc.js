@@ -1,37 +1,25 @@
-#!/usr/bin/env node
+import { gameEngine } from "../../src/index";
 
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/extensions, import/no-duplicates
-import { CheckCorrectAnsver } from '../index.js';
-
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log('What is the result of the expression?');
-let counterToCorrect = 0;
-let correctFlag = true;
-const maxNumber = 30;
-
-while (counterToCorrect < 3 && correctFlag) {
-  const firstNumber = Math.floor(Math.random() * maxNumber);
-  const secondNumber = Math.floor(Math.random() * maxNumber);
-
+function getQuestionAndAnswer() {
+  const maxNumber = 30;
   const operationArray = [
     { opaeration: '+', answer: firstNumber + secondNumber },
     { opaeration: '-', answer: firstNumber - secondNumber },
     { opaeration: '*', answer: firstNumber * secondNumber },
   ];
 
+  const firstNumber = Math.floor(Math.random() * maxNumber);
+  const secondNumber = Math.floor(Math.random() * maxNumber);
   const opaeration = operationArray[Math.floor(Math.random() * 2)];
+  const question = `Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`;
+  const answer = (opaeration.answer).toString();
 
-  console.log(`Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`);
-  const answer = readlineSync.question('Your answer: ');
+  return [question, answer];
+};
 
-  correctFlag = CheckCorrectAnsver(parseInt(answer, 10), opaeration.answer, name);
-  if (correctFlag) {
-    counterToCorrect += 1;
-  }
-}
-if (counterToCorrect === 3) {
-  console.log(`Congratulations, ${name}!`);
-}
+const startAdditionGame = () => {
+  const gameQuestion = 'What is the result of the expression?';
+  gameEngine(getQuestionAndAnswer, gameQuestion);
+};
+
+export default startAdditionGame;
