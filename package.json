@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/SandActor/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/SandActor/frontend-project-44/actions)",
+  "description": "Проект - Игры разума (https://github.com/SandActor/frontend-project-44), Начат: 20.09.2024, Проверяющий: Олег Кольцов, Студент: Лука. Проект состоит из 5 игр, каждая из которых использует основной движок. Дивжет выполняет несколько простых функйи 1) приветстиве, 2) вопрос пользователю по игре, 3) запрос ответа от пользователя, 4) сравнивание ответов, 5) вынесение вердикта.", 
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,6 @@
     "url": "frontend-project-44"
   },
   "bin": {
-    "brain-games": "bin/brain-games.js",
     "brain-even": "bin/games/brain-even.js",
     "brain-calc": "bin/games/brain-calc.js",
     "brain-gcd": "bin/games/brain-gcd.js",
