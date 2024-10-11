@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/extensions, import/no-duplicates
-import { CheckCorrectAnsver } from '../../src/index.js';
+import gameEngine from "../../src/index.js";
 
 function isPrime(num) {
   if (num <= 1) {
@@ -22,28 +20,17 @@ function isPrime(num) {
   return true;
 }
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-let counterToCorrect = 0;
-const maxNumber = 10;
-let correctFlag = true;
-
-while (counterToCorrect < 3 && correctFlag) {
+function getQuestionAndAnswer() {
+  const maxNumber = 10;
   const number = Math.floor(Math.random() * maxNumber);
-  console.log(`Question: ${number}`);
-  let correctAnswer = 'no';
-  const answer = readlineSync.question('Your answer: ');
-
+  let answer = 'no';
   if (isPrime(number)) {
-    correctAnswer = 'yes';
+    answer = 'yes';
   }
-  correctFlag = CheckCorrectAnsver(answer, correctAnswer, name);
-  if (correctFlag) {
-    counterToCorrect += 1;
-  }
-}
-if (counterToCorrect === 3) {
-  console.log(`Congratulations, ${name}!`);
-}
+  const question = `Question: ${number}`;
+
+  return [question, answer.toString()];
+};
+
+const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+gameEngine(getQuestionAndAnswer, gameQuestion);

@@ -15,7 +15,7 @@ function getQuestionAndAnswer() {
   const question = `Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`;
   const answer = (opaeration.answer).toString();
 
-  return [question, answer];
+  return [question,  answer.toString()];
 };
 
 const gameQuestion = 'What is the result of the expression?';

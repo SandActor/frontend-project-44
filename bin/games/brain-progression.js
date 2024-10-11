@@ -1,9 +1,6 @@
 #!/usr/bin/env node
-/* eslint-disable import/extensions */
 
-import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/extensions, import/no-duplicates
-import { CheckCorrectAnsver } from '../index.js';
+import gameEngine from "../../src/index.js";
 
 function generateArithmeticProgression() {
   const length = Math.floor(Math.random() * 6) + 5;
@@ -24,26 +21,13 @@ function generateArithmeticProgression() {
   };
 }
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log('What number is missing in the progression?');
-
-let counterToCorrect = 0;
-let correctFlag = true;
-
-while (counterToCorrect < 3 && correctFlag) {
+function getQuestionAndAnswer() {
   const gameData = generateArithmeticProgression();
-  console.log(`Question: ${gameData.progression}`);
+  const answer = gameData.hiddenNumber;
+  const question = `Question: ${gameData.progression}`;
 
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnsver = gameData.hiddenNumber;
+  return [question, answer.toString()];
+};
 
-  correctFlag = CheckCorrectAnsver(parseInt(answer, 10), correctAnsver, name);
-  if (correctFlag) {
-    counterToCorrect += 1;
-  }
-}
-if (counterToCorrect === 3) {
-  console.log(`Congratulations, ${name}!`);
-}
+const gameQuestion = 'What number is missing in the progression?';
+gameEngine(getQuestionAndAnswer, gameQuestion);
