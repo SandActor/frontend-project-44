@@ -15,8 +15,7 @@ function gameEngine(getQuestionAndAnswer, gameQuestion) {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       correctCount += 1;
-    } 
-    else {
+    } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${name}!`);
       break;
