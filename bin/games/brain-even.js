@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import gameEngine from "../../src/index.js";
+import gameEngine from '../../src/index.js';
 
 function getQuestionAndAnswer() {
   const maxNumber = 30;
@@ -10,9 +10,8 @@ function getQuestionAndAnswer() {
     answer = 'no';
   }
   const question = `Question: ${number}`;
-
   return [question,  answer.toString()];
-};
+}
 
 const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 gameEngine(getQuestionAndAnswer, gameQuestion);

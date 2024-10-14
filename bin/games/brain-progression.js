@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import gameEngine from "../../src/index.js";
+import gameEngine from '../../src/index.js';
 
 function generateArithmeticProgression() {
   const length = Math.floor(Math.random() * 6) + 5;
@@ -25,9 +25,8 @@ function getQuestionAndAnswer() {
   const gameData = generateArithmeticProgression();
   const answer = gameData.hiddenNumber;
   const question = `Question: ${gameData.progression}`;
-
   return [question, answer.toString()];
-};
+}
 
 const gameQuestion = 'What number is missing in the progression?';
 gameEngine(getQuestionAndAnswer, gameQuestion);

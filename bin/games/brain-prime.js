@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import gameEngine from "../../src/index.js";
+import gameEngine from '../../src/index.js';
 
 function isPrime(num) {
   if (num <= 1) {
@@ -28,9 +28,8 @@ function getQuestionAndAnswer() {
     answer = 'yes';
   }
   const question = `Question: ${number}`;
-
   return [question, answer.toString()];
-};
+}
 
 const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 gameEngine(getQuestionAndAnswer, gameQuestion);

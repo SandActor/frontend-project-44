@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import gameEngine from "../../src/index.js";
+import gameEngine from '../../src/index.js';
 
 function gcd(number1, number2) {
   if (number2 === 0) {
@@ -16,9 +16,8 @@ function getQuestionAndAnswer() {
   const secondNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
   const answer = gcd(firstNumber, secondNumber);
   const question = `Question: ${firstNumber} ${secondNumber}`;
-
   return [question, answer.toString()];
-};
+}
 
 const gameQuestion = 'Find the greatest common divisor of given numbers.';
 gameEngine(getQuestionAndAnswer, gameQuestion);
