@@ -10,7 +10,7 @@ function getQuestionAndAnswer() {
     answer = 'no';
   }
   const question = `Question: ${number}`;
-  return [question,  answer.toString()];
+  return [question, answer.toString()];
 }
 
 const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';

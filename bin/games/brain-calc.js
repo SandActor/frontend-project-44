@@ -14,7 +14,7 @@ function getQuestionAndAnswer() {
   const opaeration = operationArray[Math.floor(Math.random() * 2)];
   const question = `Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`;
   const answer = (opaeration.answer).toString();
-  return [question,  answer.toString()];
+  return [question, answer.toString()];
 }
 
 const gameQuestion = 'What is the result of the expression?';
