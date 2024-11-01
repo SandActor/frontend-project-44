@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-function gcd(number1, number2) {
+const gcd = (number1, number2) => {
   if (number2 === 0) {
     return number1;
   }
@@ -15,7 +15,6 @@ const getQuestionAndAnswer = () => {
   const answer = gcd(firstNumber, secondNumber);
   const question = `Question: ${firstNumber} ${secondNumber}`;
   return [question, answer.toString()];
-}
+};
 
 export default getQuestionAndAnswer;
-

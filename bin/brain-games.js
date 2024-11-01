@@ -2,4 +2,3 @@
 import getUserNameAndWelcome from '../src/games.js';
 
 getUserNameAndWelcome();
-

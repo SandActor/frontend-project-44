@@ -17,13 +17,13 @@ const generateArithmeticProgression = () => {
     progression: displayedProgression.join(' '),
     hiddenNumber: progression[hiddenIndex],
   };
-}
+};
 
 const getQuestionAndAnswer = () => {
   const gameData = generateArithmeticProgression();
   const answer = gameData.hiddenNumber;
   const question = `Question: ${gameData.progression}`;
   return [question, answer.toString()];
-}
+};
 
 export default getQuestionAndAnswer;

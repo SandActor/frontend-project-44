@@ -13,7 +13,6 @@ const getQuestionAndAnswer = () => {
   const question = `Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`;
   const answer = (opaeration.answer).toString();
   return [question, answer.toString()];
-}
+};
 
 export default getQuestionAndAnswer;
-

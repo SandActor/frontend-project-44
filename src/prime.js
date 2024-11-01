@@ -16,7 +16,7 @@ const isPrime = (num) => {
     }
   }
   return true;
-}
+};
 
 const getQuestionAndAnswer = () => {
   const maxNumber = 10;
@@ -27,6 +27,6 @@ const getQuestionAndAnswer = () => {
   }
   const question = `Question: ${number}`;
   return [question, answer.toString()];
-}
+};
 
 export default getQuestionAndAnswer;

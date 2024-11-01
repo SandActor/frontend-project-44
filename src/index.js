@@ -6,7 +6,7 @@ const gameEngine = (getQuestionAndAnswer, gameQuestion) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameQuestion);
-  for (let i = 0; i < MAX_ANSWERS; i++) {
+  for (let i = 0; i < MAX_ANSWERS; i += 1) {
     const [question, correctAnswer] = getQuestionAndAnswer();
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
