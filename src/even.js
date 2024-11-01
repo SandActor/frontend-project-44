@@ -9,6 +9,6 @@ const getQuestionAndAnswer = () => {
   }
   const question = `Question: ${number}`;
   return [question, answer.toString()];
-}
+};
 
 export default getQuestionAndAnswer;
