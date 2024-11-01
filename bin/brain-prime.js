@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import gameEngine from '../../src/index.js';
+import gameEngine from '../src/index.js';
 
-function isPrime(num) {
+const isPrime = (num) => {
   if (num <= 1) {
     return false;
   }
@@ -20,7 +20,7 @@ function isPrime(num) {
   return true;
 }
 
-function getQuestionAndAnswer() {
+const getQuestionAndAnswer = () => {
   const maxNumber = 10;
   const number = Math.floor(Math.random() * maxNumber);
   let answer = 'no';

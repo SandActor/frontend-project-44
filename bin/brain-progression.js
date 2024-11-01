@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import gameEngine from '../../src/index.js';
+import gameEngine from '../src/index.js';
 
-function generateArithmeticProgression() {
+const generateArithmeticProgression = () => {
   const length = Math.floor(Math.random() * 6) + 5;
   const start = Math.floor(Math.random() * 10);
   const step = Math.floor(Math.random() * 10) + 1;
@@ -21,7 +21,7 @@ function generateArithmeticProgression() {
   };
 }
 
-function getQuestionAndAnswer() {
+const getQuestionAndAnswer = () => {
   const gameData = generateArithmeticProgression();
   const answer = gameData.hiddenNumber;
   const question = `Question: ${gameData.progression}`;

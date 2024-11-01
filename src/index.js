@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-function gameEngine(getQuestionAndAnswer, gameQuestion) {
+const gameEngine = (getQuestionAndAnswer, gameQuestion) => {
   const MAX_ANSWERS = 3;
   let correctCount = 0;
   console.log('Welcome to the Brain Games!');

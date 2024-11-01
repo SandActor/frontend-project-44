@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import gameEngine from '../../src/index.js';
+import gameEngine from '../src/index.js';
 
 function getQuestionAndAnswer() {
   const maxNumber = 30;

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import gameEngine from '../../src/index.js';
+import gameEngine from '../src/index.js';
 
 function gcd(number1, number2) {
   if (number2 === 0) {
@@ -9,7 +9,7 @@ function gcd(number1, number2) {
   return gcd(number2, number1 % number2);
 }
 
-function getQuestionAndAnswer() {
+const getQuestionAndAnswer = () => {
   const minNumber = 20;
   const maxNumber = 100;
   const firstNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
