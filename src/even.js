@@ -1,14 +1,15 @@
-#!/usr/bin/env node
+import { getRandomNumber } from "./utils";
+import { checkParity } from "./utils";
 
-const getQuestionAndAnswer = () => {
+const startEvenGame = () => {
   const maxNumber = 30;
   let answer = 'yes';
-  const number = Math.floor(Math.random() * maxNumber);
-  if (number % 2 !== 0) {
+  const number = getRandomNumber(maxNumber);
+  if (checkParity(number)) {
     answer = 'no';
   }
   const question = `Question: ${number}`;
   return [question, answer.toString()];
 };
 
-export default getQuestionAndAnswer;
+export default startEvenGame;

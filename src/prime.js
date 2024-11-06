@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+import { getRandomNumber } from "./utils";
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -18,9 +18,9 @@ const isPrime = (num) => {
   return true;
 };
 
-const getQuestionAndAnswer = () => {
+const startPrimeGame = () => {
   const maxNumber = 10;
-  const number = Math.floor(Math.random() * maxNumber);
+  const number = getRandomNumber(maxNumber);
   let answer = 'no';
   if (isPrime(number)) {
     answer = 'yes';
@@ -29,4 +29,4 @@ const getQuestionAndAnswer = () => {
   return [question, answer.toString()];
 };
 
-export default getQuestionAndAnswer;
+export default startPrimeGame;
