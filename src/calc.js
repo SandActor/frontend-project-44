@@ -3,18 +3,14 @@ import { getRandomNumber } from './utils.js';
 const getAnswerOperation = (valsArray, operation) => {
   switch (operation) {
     case '+':
-      return valsArray.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue;
-      }, 0);
+      return valsArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     case '-':
       return valsArray.reduce((accumulator, currentValue, index) => {
         if (index === 0) return accumulator;
         return accumulator - currentValue;
       }, valsArray[0]);
     case '*':
-      return valsArray.reduce((accumulator, currentValue) => {
-        return accumulator * currentValue;
-      }, 1);
+      return valsArray.reduce((accumulator, currentValue) => accumulator * currentValue, 1);
     default:
       throw new Error('Неизвестная операция');
   }
