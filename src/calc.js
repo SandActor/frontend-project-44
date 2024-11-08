@@ -7,9 +7,10 @@ const getAnswerOperation = (valsArray, operation) => {
         return accumulator + currentValue;
       }, 0);
     case '-':
-      return valsArray.reduce((accumulator, currentValue) => {
+      return valsArray.reduce((accumulator, currentValue, index) => {
+        if (index === 0) return accumulator;
         return accumulator - currentValue;
-      }, valsArray.length !== 0 ? valsArray[0] : 0);
+      }, valsArray[0]);
     case '*':
       return valsArray.reduce((accumulator, currentValue) => {
         return accumulator * currentValue;
