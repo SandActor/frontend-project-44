@@ -14,14 +14,9 @@ const startCalcGame = () => {
   const maxNumber = 30;
   const firstNumber = getRandomNumber(maxNumber);
   const secondNumber = getRandomNumber(maxNumber);
-  const operationArray = [
-    { opaeration: '+' },
-    { opaeration: '-' },
-    { opaeration: '*' },
-  ];
-
+  const operationArray = ['+', '-', '*'];
   const opaeration = operationArray[getRandomNumber(operationArray.length - 1)];
-  const question = `Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`;
+  const question = `Question: ${firstNumber} ${opaeration} ${secondNumber}`;
   const stringOpaeration = [firstNumber, secondNumber].join(" " + opaeration + " ")
   const answer = getAnswerOperation(stringOpaeration).toString();
   return [question, answer.toString()];
