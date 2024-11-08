@@ -2,6 +2,7 @@ import { getRandomNumber } from "./utils.js";
 
 const getAnswerOperation = (expression) => {
   try {
+    console.log(expression);
     const result = eval(expression);
     return result;
   } catch (error) {
