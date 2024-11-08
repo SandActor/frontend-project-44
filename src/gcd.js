@@ -1,4 +1,4 @@
-import { getRandomNumber } from "./utils";
+import { getRandomNumber } from "./utils.js";
 
 const gcd = (number1, number2) => {
   if (number2 === 0) {
