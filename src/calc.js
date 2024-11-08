@@ -2,7 +2,6 @@ import { getRandomNumber } from './utils.js';
 
 const getAnswerOperation = (expression) => {
   try {
-    console.log(expression);
     const result = eval(expression);
     return result;
   } catch (error) {
@@ -14,7 +13,7 @@ const startCalcGame = () => {
   const maxNumber = 30;
   const firstNumber = getRandomNumber(maxNumber);
   const secondNumber = getRandomNumber(maxNumber);
-  const operationArray = [' + ', ' - ', ' * '];
+  const operationArray = ['+', '-', '*'];
   const opaeration = operationArray[getRandomNumber(operationArray.length - 1)];
   const question = `Question: ${firstNumber} ${opaeration} ${secondNumber}`;
   const stringOpaeration = [firstNumber, secondNumber].join(opaeration);
