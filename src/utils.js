@@ -1,7 +1,7 @@
 export const getRandomNumber = (maxNumber) => {
-    return Math.floor(Math.random() * maxNumber);
+ return Math.floor(Math.random() * maxNumber);
 };
 
 export const checkParity = (number) => {
-    return number % 2 !== 0;
+ return number % 2 !== 0;
 };

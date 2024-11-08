@@ -1,4 +1,4 @@
-import { getRandomNumber } from "./utils.js";
+import { getRandomNumber } from './utils.js';
 
 const gcd = (number1, number2) => {
   if (number2 === 0) {
@@ -10,7 +10,7 @@ const gcd = (number1, number2) => {
 const startGcdGame = () => {
   const minNumber = 20;
   const maxNumber = 100;
-  const firstNumber = getRandomNumber((maxNumber - minNumber + 1))  + minNumber;
+  const firstNumber = getRandomNumber((maxNumber - minNumber + 1)) + minNumber;
   const secondNumber = getRandomNumber((maxNumber - minNumber + 1)) + minNumber;
   const answer = gcd(firstNumber, secondNumber);
   const question = `Question: ${firstNumber} ${secondNumber}`;

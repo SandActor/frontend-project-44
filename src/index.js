@@ -14,9 +14,8 @@ const gameEngine = (getQuestionAndAnswer, gameQuestion) => {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${name}!`);
       return;
-    } else {
-      console.log('Correct!');
-    }
+    } 
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };
