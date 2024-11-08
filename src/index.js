@@ -10,17 +10,15 @@ const gameEngine = (getQuestionAndAnswer, gameQuestion) => {
     const [question, correctAnswer] = getQuestionAndAnswer();
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
+    if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${name}!`);
       return;
-    }
-    if (i === MAX_ANSWERS - 1) {
-      console.log(`Congratulations, ${name}!`);
+    } else {
+      console.log('Correct!');
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default gameEngine;

@@ -1,5 +1,4 @@
-import { getRandomNumber } from "./utils";
-import { checkParity } from "./utils";
+import { getRandomNumber, checkParity } from "./utils.js";
 
 const startEvenGame = () => {
   const maxNumber = 30;

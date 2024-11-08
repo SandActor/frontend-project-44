@@ -1,17 +1,28 @@
 import { getRandomNumber } from "./utils";
 
+const getAnswerOperation = (expression) => {
+  try {
+    const result = eval(expression);
+    return result;
+  } catch (error) {
+    throw new Error('Произошла ошибка при вычислении выражения: ' + error.message);
+  }
+};
+
 const startCalcGame = () => {
   const maxNumber = 30;
   const firstNumber = getRandomNumber(maxNumber);
   const secondNumber = getRandomNumber(maxNumber);
   const operationArray = [
-    { opaeration: '+', answer: firstNumber + secondNumber },
-    { opaeration: '-', answer: firstNumber - secondNumber },
-    { opaeration: '*', answer: firstNumber * secondNumber },
+    { opaeration: '+' },
+    { opaeration: '-' },
+    { opaeration: '*' },
   ];
-  const opaeration = operationArray[Math.floor(Math.random() * (operationArray.length - 1))];
+
+  const opaeration = operationArray[getRandomNumber(operationArray.length - 1)];
   const question = `Question: ${firstNumber} ${opaeration.opaeration} ${secondNumber}`;
-  const answer = (opaeration.answer).toString();
+  const stringOpaeration = [firstNumber, secondNumber].join(" " + opaeration + " ")
+  const answer = getAnswerOperation(stringOpaeration).toString();
   return [question, answer.toString()];
 };
 
