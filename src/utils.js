@@ -1,5 +1,3 @@
-export const getRandomNumber = (maxNumber) =>
- Math.floor(Math.random() * maxNumber);
+export const getRandomNumber = (maxNumber) => Math.floor(Math.random() * maxNumber);
 
-export const checkParity = (number) =>
- number % 2 !== 0;
+export const checkParity = (number) => number % 2 !== 0;
