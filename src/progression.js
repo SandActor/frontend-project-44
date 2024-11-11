@@ -10,7 +10,7 @@ const generateArithmeticProgression = (length, start, step) => {
   progression.forEach((element) => {
     displayedProgression.push(element);
   });
-  return displayedProgression.join(' ');
+  return progression;
 };
 
 const startProgressionGame = () => {
@@ -23,7 +23,7 @@ const startProgressionGame = () => {
 
   gameData[hiddenIndex] = '..';
 
-  const question = `Question: ${gameData}`;
+  const question = `Question: ${gameData.join(' ')}`;
   return [question, answer.toString()];
 };
 
