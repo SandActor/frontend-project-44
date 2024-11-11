@@ -1,5 +1,5 @@
 import { getRandomNumber } from './utils.js';
-import { gameEngine } from './index.js';
+import gameEngine from './index.js';
 
 const getAnswerOperation = (valsArray, operation) => {
   switch (operation) {

@@ -1,5 +1,5 @@
 import { getRandomNumber, isParity } from './utils.js';
-import { gameEngine } from './index.js';
+import gameEngine from './index.js';
 
 const startEvenGame = () => {
   const maxNumber = 30;
