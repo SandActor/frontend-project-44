@@ -1,23 +1,16 @@
 import { getRandomNumber } from './utils.js';
+import { gameEngine } from './index.js';
 
 const generateArithmeticProgression = (length, start, step) => {
   const progression = [];
   for (let i = 0; i < length; i += 1) {
     progression.push(start + i * step);
   }
-  const hiddenIndex = getRandomNumber(length);
   const displayedProgression = [];
-  progression.forEach((element, index) => {
-    displayedProgression.push(index === hiddenIndex ? '..' : element);
+  progression.forEach((element) => {
+    displayedProgression.push(element);
   });
   return displayedProgression.join(' ');
-};
-
-const getAnswerProgression = (gameData, start, step) => {
-  const progressionArray = gameData.split(' ');
-  const hiddenIndex = progressionArray.indexOf('..');
-  const missingNumber = start + hiddenIndex * step;
-  return missingNumber;
 };
 
 const startProgressionGame = () => {
@@ -25,9 +18,17 @@ const startProgressionGame = () => {
   const start = getRandomNumber(10);
   const step = getRandomNumber(10) + 1;
   const gameData = generateArithmeticProgression(length, start, step);
-  const answer = getAnswerProgression(gameData, start, step);
+  const hiddenIndex = getRandomNumber(length);
+  const answer = gameData[hiddenIndex];
+
+  gameData[hiddenIndex] = '..';
+
   const question = `Question: ${gameData}`;
   return [question, answer.toString()];
 };
 
-export default startProgressionGame;
+const gameQuestion = 'What number is missing in the progression?';
+
+const runProgressionGame = () => gameEngine(startProgressionGame, gameQuestion);
+
+export default runProgressionGame;

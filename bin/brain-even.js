@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-import gameEngine from '../src/index.js';
-import startEvenGame from '../src/even.js';
+import runEvenGame from '../src/even.js';
 
-const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameEngine(startEvenGame, gameQuestion);
+// Игра Четность числа
+// Эта игра предлагает пользователю ответить на вопрос четное число или нет.
+// Логика реализации содержится в функции runEvenGame.
+
+runEvenGame();

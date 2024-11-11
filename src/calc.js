@@ -1,4 +1,5 @@
 import { getRandomNumber } from './utils.js';
+import { gameEngine } from './index.js';
 
 const getAnswerOperation = (valsArray, operation) => {
   switch (operation) {
@@ -27,4 +28,8 @@ const startCalcGame = () => {
   return [question, answer.toString()];
 };
 
-export default startCalcGame;
+const gameQuestion = 'What is the result of the expression?';
+
+const runCalcGame = () => gameEngine(startCalcGame, gameQuestion);
+
+export default runCalcGame;

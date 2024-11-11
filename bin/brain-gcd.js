@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-import gameEngine from '../src/index.js';
-import startGcdGame from '../src/gcd.js';
+import runGcdGame from '../src/gcd.js';
 
-const gameQuestion = 'Find the greatest common divisor of given numbers.';
-gameEngine(startGcdGame, gameQuestion);
+// Игра НОД
+// Эта игра предлагает пользователю найти наибольший общий делитель заданных чисел.
+// Логика реализации содержится в функции runGcdGame.
+
+runGcdGame();
